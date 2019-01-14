@@ -3,8 +3,8 @@ A   Baby   class and functions that use/test it.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Haiden Smith.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -36,6 +36,7 @@ def main():
         print('- - - - -')
         keegan.hour_passes()
         mckinley.feed_baby()
+
 
         for j in range(4):
             mckinley.hour_passes()
@@ -107,9 +108,30 @@ def main():
 #          """ Brief description of what an object of the class 'is'. """
 #
 ###############################################################################
+class Baby(object):
+
+    def __init__(self, b):
+        self.b = b
+        self.call = 0
+        print('Hello baby ' + self.b + '!')
+
+    def feed_baby(self):
+        print('Thank you for feeding baby ' + self.b, '.')
+        self.call = 0
+
+    def hour_passes(self):
+        self.call += 1
+        if self.call == 1:
+            print('Baby ', self.b, 'is sleeping')
+        elif self.call == 2:
+            print('Baby ', self.b, 'is awake.  Time for food.')
+        elif self.call >= 3:
+            print('Baby ', self.b, 'is CRYING uncontrollably!  Feed the Baby!')
+
 
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+
 main()
